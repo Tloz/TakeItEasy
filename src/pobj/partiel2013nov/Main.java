@@ -79,11 +79,18 @@ public class Main {
 	    int i2 = Question8.valeur(pe4,Direction.Hg); 
 	    int i3 = Question8.valeur(pe4,Direction.Bg); 
 	    System.out.println("piece "+pe4+" = "+ i1 + " " + i2 + " " + i3);
-	    */
+	    
 		
 		Lignes lg = new Lignes(Question5.Figure1());
 	    int [] r = lg.getLigneDir(0,Direction.Hg);
 	    for (int i = 0; i< r.length; i++) {System.out.println("r["+i+"]="+r[i]);}
+	    */
+		
+		Score sc = new Score(Question5.Figure1(),0);
+	    sc.nouveauScore(new Piece(9,4,7),1);
+	    System.out.println("score = " + sc.getScore());
+	    sc.nouveauScore(new Piece(5,8,2),6);
+	    System.out.println("score = " + sc.getScore());
 	}
 
 }

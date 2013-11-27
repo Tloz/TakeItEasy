@@ -31,28 +31,26 @@ public class Lignes extends LignesAbs{
 		size = c[pos][dir].length;
 		for(i = 0; i < size; i++)
 			ligne.add(c[pos][dir][i]);
-
 		int[] res = new int[size];
-
 		for(i = 0; i < size ; i++)
 		{
-			switch (d)
-			{
-			case V:
-				res[i] = pl.getPiece(ligne.get(i)).getV();
-				break;
-			case Hg:
-				res[i] = pl.getPiece(ligne.get(i)).getHg();
-				break;
-			case Bg:
-				res[i] = pl.getPiece(ligne.get(i)).getBg();
-				break;
+			if(pl.getPiece(ligne.get(i)) != null)
+			{// si l'on a bien une pièce et pas une case vide
+				switch (d)
+				{
+				case V:
+					res[i] = pl.getPiece(ligne.get(i)).getV();
+					break;
+				case Hg:
+					res[i] = pl.getPiece(ligne.get(i)).getHg();
+					break;
+				case Bg:
+					res[i] = pl.getPiece(ligne.get(i)).getBg();
+					break;
+				}
 			}
-			System.out.println(res[i]);
+			else res[i] = 0;
 		}
 		return res;
 	}
-
-
-
 }
